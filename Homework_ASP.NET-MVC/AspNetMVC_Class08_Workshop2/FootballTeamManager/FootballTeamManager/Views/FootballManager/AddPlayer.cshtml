@@ -1,0 +1,20 @@
+﻿@model Player
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(x => x.PlayerId)
+    @Html.TextBoxFor(x => x.PlayerId)
+    <br />
+    @Html.LabelFor(x => x.FirstName)
+    @Html.TextBoxFor(x => x.FirstName)
+    <br />
+    @Html.LabelFor(x => x.LastName)
+    @Html.TextBoxFor(x => x.LastName)
+    <br />
+    @Html.DropDownListFor(x => x.Position,
+    Html.GetEnumSelectList(Model.Position.GetType()), "Select position: ")
+    <br />
+    @Html.LabelFor(x => x.Salary)
+    @Html.TextBoxFor(x => x.Salary)
+    <button type="submit">Add Player</button>
+}
